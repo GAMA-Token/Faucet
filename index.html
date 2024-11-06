@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gama Coin Faucet</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e6f1ff, #f0f9ff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        #logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        button {
+            padding: 12px 24px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #d9534f; /* Bootstrap danger color */
+        }
+
+        #walletAddress {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #28a745; /* Bootstrap success color */
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- GAMA Logo -->
+        <img id="logo" src="https://gamacoin.ai/assets/images/gama-logo.svg" alt="Gama Coin Logo">
+
+        <h1>Gama Coin Faucet</h1>
+        <p>Connect your wallet and request GAMA tokens.</p>
+
+        <!-- Button to connect MetaMask -->
+        <button id="connectWalletBtn">Connect Wallet</button>
+        <p id="walletAddress">Not Connected</p>
+
+        <!-- Button to claim tokens -->
+        <button id="requestTokensBtn" disabled>Request Tokens</button>
+
+        <p id="status"></p>
+
+        <footer>
+            <p>&copy; 2024 GAMA Coin | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="faucet.js"></script>
+</body>
+</html>
